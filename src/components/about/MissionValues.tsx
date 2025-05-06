@@ -30,7 +30,7 @@ const MissionValues: React.FC = () => {
       >
         Our Mission & Values
       </motion.h2>
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-8 mt-5">
         {values.map((value, index) => (
           <motion.div
             key={value.title}
