@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chanse Medical - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <style>
+        .news-card {
+            transition: all 0.3s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .appointment-form .form-control {
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+        }
+        
+        .appointment-form .form-label {
+            font-weight: 500;
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .footer-links a {
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #fff !important;
+            transform: translateX(5px);
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--bs-primary);
+            transform: translateY(-3px);
+        }
+        
+        .working-hours li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .working-hours li:last-child {
+            border-bottom: none;
+        }
+        
+        .newsletter-form .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+        }
+        
+        .newsletter-form .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .newsletter-form .btn {
+            padding: 0.5rem 1rem;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        
+        .footer-wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 100px;
+        }
+        
+        .bg-dark-light {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .footer-links a {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .footer-links a:hover {
+            color: #fff !important;
+            transform: translateX(5px);
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--bs-primary);
+            transform: translateY(-3px);
+        }
+        
+        .working-hours li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .working-hours li:last-child {
+            border-bottom: none;
+        }
+        
+        .newsletter-form .form-control {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .newsletter-form .form-control:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+        
+        .working-hours li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.2) !important;
+            backdrop-filter: blur(5px);
+        }
+        
+        .badge.bg-danger {
+            background: rgba(220, 53, 69, 0.8) !important;
+        }
+        /* Navbar Gradient */
+        
+        .navbar-gradient {
+            background: linear-gradient(135deg, #8dc63f 0%, #00b6e9 100%) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+            transition: none !important;
+            opacity: 1 !important;
+        }
+        
+        .navbar-gradient .navbar-brand,
+        .navbar-gradient .nav-link,
+        .navbar-gradient .navbar-toggler {
+            color: #fff !important;
+        }
+        
+        .navbar-gradient .nav-link.active,
+        .navbar-gradient .nav-link:focus,
+        .navbar-gradient .nav-link:hover {
+            color: #fff !important;
+            background: #003366 !important;
+            border-radius: 0.5rem;
+        }
+        
+        .navbar-gradient .btn-primary {
+            background: #fff !important;
+            color: #00b6e9 !important;
+            border: none;
+        }
+        
+        .navbar-gradient .btn-primary:hover {
+            background: #8dc63f !important;
+            color: #fff !important;
+        }
+        
+        .navbar-gradient .fas,
+        .navbar-gradient .fa-hospital-alt {
+            color: #fff !important;
+        }
+        
+        body {
+            background: #fffafa !important;
+        }
+        /* Vintage blue color for icons and buttons (except header/footer) */
+        
+        .vintageblue-icon,
+        .quick-info .icon-wrapper i,
+        .service-card .icon-wrapper i,
+        .stat-item i,
+        .testimonial-card .text-warning i,
+        .news-card .badge,
+        .feature-item i {
+            color: #8dc63f !important;
+        }
+        
+        .btn-vintageblue,
+        .quick-info .btn,
+        .service-card .btn,
+        .news-card .btn,
+        .cta .btn,
+        .appointment-form .btn,
+        .back-to-top.btn {
+            background: #49759c !important;
+            color: #fff !important;
+            border: none;
+        }
+        
+        .btn-vintageblue:hover,
+        .quick-info .btn:hover,
+        .service-card .btn:hover,
+        .news-card .btn:hover,
+        .cta .btn:hover,
+        .appointment-form .btn:hover,
+        .back-to-top.btn:hover {
+            background: #35516a !important;
+            color: #fff !important;
+        }
+        /* Outline vintage blue button */
+        
+        .btn-outline-vintageblue {
+            color: #49759c !important;
+            border: 2px solid #49759c !important;
+            background: transparent !important;
+        }
+        
+        .btn-outline-vintageblue:hover {
+            background: #49759c !important;
+            color: #fff !important;
+        }
+        /* News badge vintage blue */
+        
+        .news-card .badge.bg-primary,
+        .news-card .badge.bg-success,
+        .news-card .badge.bg-info {
+            background: #49759c !important;
+            color: #fff !important;
+        }
+        /* Card hover shadow for interest */
+        
+        .info-card,
+        .service-card,
+        .news-card,
+        .testimonial-card {
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        
+        .info-card:hover,
+        .service-card:hover,
+        .news-card:hover,
+        .testimonial-card:hover {
+            box-shadow: 0 8px 32px rgba(73, 117, 156, 0.15), 0 1.5px 6px rgba(0, 0, 0, 0.07);
+            transform: translateY(-6px) scale(1.03);
+        }
+        /* Swiper navigation vintage blue */
+        
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #49759c !important;
+        }
+        /* Vintage blue for statistics numbers */
+        
+        .stat-item h2 {
+            color: #49759c !important;
+        }
+        /* CTA section button vintage blue */
+        
+        .cta .btn-light {
+            background: #49759c !important;
+            color: #fff !important;
+            border: none;
+        }
+        
+        .cta .btn-light:hover {
+            background: #35516a !important;
+        }
+        /* WhatsApp button stays green for recognizability */
+        
+        .floating-whatsapp {
+            background: #25d366 !important;
+            color: #fff !important;
+        }
+        /* Remove any scroll-based background or shadow changes */
+        
+        .navbar.scrolled {
+            background: linear-gradient(135deg, #8dc63f 0%, #00b6e9 100%) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07) !important;
+            opacity: 1 !important;
+        }
+        
+        .footer-gradient {
+            background: linear-gradient(135deg, #8dc63f 0%, #00b6e9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-links {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 1rem 1.25rem;
+            border-radius: 0.4rem;
+            backdrop-filter: blur(6px);
+        }
+        
+        .footer-links a {
+            color: #fff !important;
+            padding: 0.35rem 0.75rem;
+            border-radius: 0.2rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.25rem;
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .footer-links-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-links-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 32px;
+            height: 2px;
+            background: var(--bs-primary);
+        }
+        
+        .footer-about {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-contact h6,
+        .footer-links-title,
+        .working-hours h6,
+        .newsletter-form h6 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .footer-contact ul,
+        .working-hours ul {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-contact li,
+        .working-hours li {
+            margin-bottom: 0.4rem;
+            font-size: 0.97rem;
+        }
+        
+        .emergency-contact {
+            margin-top: 1rem;
+        }
+        
+        .newsletter-form {
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-form .form-control {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.97rem;
+        }
+        
+        .newsletter-form .btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.97rem;
+        }
+        
+        .payment-methods {
+            margin-top: 1rem;
+        }
+        
+        .payment-icons i {
+            font-size: 1.5rem;
+            margin-right: 0.3rem;
+        }
+        
+        .footer-logo {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-about p {
+            margin-bottom: 1rem;
+            font-size: 0.97rem;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            font-size: 1rem;
+        }
+        
+        .footer-bottom {
+            margin-top: 1rem;
+        }
+        
+        .footer-bottom p,
+        .footer-bottom ul {
+            font-size: 0.97rem;
+        }
+        /* Card backgrounds use navbar green */
+        
+        .info-card,
+        .service-card,
+        .news-card,
+        .testimonial-card {
+            background: #8dc63f !important;
+            color: #fff !important;
+        }
+        
+        .info-card h4,
+        .service-card h4,
+        .news-card h5,
+        .testimonial-card h5,
+        .info-card p,
+        .service-card p,
+        .news-card p,
+        .testimonial-card p {
+            color: #fff !important;
+        }
+        
+        .info-card .icon-wrapper i,
+        .service-card .icon-wrapper i,
+        .news-card .icon-wrapper i,
+        .testimonial-card .icon-wrapper i {
+            color: #fff !important;
+        }
+        
+        .info-card:hover,
+        .service-card:hover,
+        .news-card:hover,
+        .testimonial-card:hover {
+            box-shadow: 0 8px 32px rgba(141, 198, 63, 0.15), 0 1.5px 6px rgba(0, 0, 0, 0.07);
+            transform: translateY(-6px) scale(1.03);
+        }
+        
+        .cta-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-card {
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 32px rgba(0, 0, 0, 0.10);
+        }
+        
+        .cta-card h2,
+        .cta-card p,
+        .cta-card .btn {
+            color: #fff !important;
+        }
+        
+        .cta-card .btn-success {
+            background: #8dc63f !important;
+            border: none;
+        }
+        
+        .cta-card .btn-success:hover {
+            background: #6fa32e !important;
+        }
+        
+        .hero-section {
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .doctor-image {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .doctor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .doctor-image img {
+            transform: scale(1.05);
+        }
+        
+        .doctor-social {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            transition: bottom 0.3s ease;
+        }
+        
+        .service-card:hover .doctor-social {
+            bottom: 0;
+        }
+        
+        .doctor-social a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .doctor-social a:hover {
+            background: var(--bs-primary);
+            transform: translateY(-3px);
+        }
+        
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card .text-primary {
+            color: var(--bs-primary) !important;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--bs-primary);
+        }
+        
+        .hover-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;
+        }
+        
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(141, 198, 63, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .icon-circle {
+            background: rgba(141, 198, 63, 0.2);
+            transform: scale(1.1);
+        }
+        
+        .feature-card .icon-circle {
+            width: 100px;
+            height: 100px;
+            background: rgba(141, 198, 63, 0.1);
+        }
+        
+        .vintageblue-icon {
+            color: #8dc63f;
+        }
+        
+        .btn-outline-vintageblue {
+            color: #8dc63f;
+            border-color: #8dc63f;
+        }
+        
+        .btn-outline-vintageblue:hover {
+            color: #fff;
+            background-color: #8dc63f;
+            border-color: #8dc63f;
+        }
+        /* Statistics Section */
+        
+        .statistics {
+            background: linear-gradient(135deg, #8dc63f 0%, #00b6e9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .statistics::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        
+        .stat-item {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .stat-item i {
+            font-size: 3rem !important;
+            color: #fff !important;
+            background: rgba(255, 255, 255, 0.15);
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        
+        .stat-item h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            display: none;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #49759c !important;
+            color: #fff !important;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #35516a !important;
+            color: #fff !important;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body class="font-poppins">
+    <!-- Emergency Contact Banner -->
+    <div class="emergency-banner bg-danger text-white py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <i class="fas fa-phone-alt me-2"></i>
+                    <span>Emergency Hotline: <a href="tel:+1234567890" class="text-white text-decoration-none fw-bold">+1 (234) 567-890</a></span>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <i class="fas fa-clock me-2"></i>
+                    <span>24/7 Emergency Services Available</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-gradient fixed-top shadow-sm">
+        <div class="container">
+            <a href="index.html" class="p-0 navbar-brand"> <img src="../CHANSE MEDICAL/Img/QF1-logo.png" width="100" height="100" /> </a>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <!-- <i class="fas fa-hospital-alt me-2"></i> -->
+                <span class="fw-bold">Chanse</span> Medical
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="about1.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-semibold" href="services1.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="doctors1.html">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="contact1.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link btn btn-primary px-4 py-2 rounded-pill" href="appointment1.html">
+                            <i class="fas fa-calendar-check me-2"></i>Book Appointment
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section position-relative py-5" style="background: linear-gradient(135deg, #8dc63f 0%, #00b6e9 100%);">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold text-white mb-4">Our Medical Services</h1>
+                    <p class="lead text-white mb-4">Experience comprehensive healthcare solutions tailored to your needs. Our team of expert medical professionals is dedicated to providing you with the highest quality care.</p>
+                    <a href="#services" class="btn btn-light btn-lg rounded-pill px-4">
+                        <i class="fas fa-stethoscope me-2"></i>Explore Services
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Cardiology -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="service-card h-100 p-4 bg-white rounded-4 shadow-sm hover-shadow">
+                        <div class="doctor-image mb-4">
+                            <img src="https://placehold.co/400x300" class="img-fluid rounded-4" alt="Cardiology">
+                            <div class="doctor-social">
+                                <a href="#" class="text-white"><i class="fas fa-heartbeat"></i></a>
+                                <a href="#" class="text-white"><i class="fas fa-stethoscope"></i></a>
+                                <a href="#" class="text-white"><i class="fas fa-calendar-check"></i></a>
+                            </div>
+                        </div>
+                        <h4 class="fw-bold mb-3">Cardiology</h4>
+                        <p class="text-primary mb-2">Heart Care Specialist</p>
+                        <p class="text-muted mb-3">Expert heart care with state-of-the-art diagnostic and treatment facilities.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Heart Disease Treatment</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>ECG & Stress Tests</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Cardiac Rehabilitation</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-vintageblue rounded-pill">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Neurology -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card h-100 p-4 bg-white rounded-4 shadow-sm hover-shadow">
+                        <div class="doctor-image mb-4">
+                            <img src="https://placehold.co/400x300" class="img-fluid rounded-4" alt="Neurology">
+                            <div class="doctor-social">
+                                <a href="#" class="text-white"><i class="fas fa-brain"></i></a>
+                                <a href="#" class="text-white"><i class="fas fa-head-side-virus"></i></a>
+                                <a href="#" class="text-white"><i class="fas fa-calendar-check"></i></a>
+                            </div>
+                        </div>
+                        <h4 class="fw-bold mb-3">Neurology</h4>
+                        <p class="text-primary mb-2">Brain & Nerve Care</p>
+                        <p class="text-muted mb-3">Comprehensive care for neurological disorders and conditions.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Stroke Treatment</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Epilepsy Management</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Headache Clinic</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-vintageblue rounded-pill">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Orthopedics -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card h-100 p-4 bg-white rounded-4 shadow-sm hover-shadow">
+                        <div class="doctor-image mb-4">
+                            <img src="https://placehold.co/400x300" class="img-fluid rounded-4" alt="Orthopedics">
+                            <div class="doctor-social">
+                                <a href="#" class="text-white"><i class="fas fa-bone"></i></a>
+                                <a href="#" class="text-white"><i class="fas fa-walking"></i></a>
+                                <a href="#" class="text-white"><i class="fas fa-calendar-check"></i></a>
+                            </div>
+                        </div>
+                        <h4 class="fw-bold mb-3">Orthopedics</h4>
+                        <p class="text-primary mb-2">Bone & Joint Care</p>
+                        <p class="text-muted mb-3">Expert care for bone, joint, and muscle conditions.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Joint Replacement</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Sports Medicine</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Spine Surgery</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-vintageblue rounded-pill">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Pediatrics -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="service-card h-100 p-4 bg-white rounded-4 shadow-sm hover-shadow">
+                        <div class="icon-circle mb-4">
+                            <i class="fas fa-baby vintageblue-icon fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Pediatrics</h4>
+                        <p class="text-muted mb-3">Specialized healthcare for infants, children, and adolescents.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Well-Child Visits</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Immunizations</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Growth Monitoring</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-vintageblue rounded-pill">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Emergency Care -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card h-100 p-4 bg-white rounded-4 shadow-sm hover-shadow">
+                        <div class="icon-circle mb-4">
+                            <i class="fas fa-ambulance vintageblue-icon fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Emergency Care</h4>
+                        <p class="text-muted mb-3">24/7 emergency medical services with rapid response.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Trauma Care</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Critical Care</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Emergency Surgery</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-vintageblue rounded-pill">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Laboratory Services -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card h-100 p-4 bg-white rounded-4 shadow-sm hover-shadow">
+                        <div class="icon-circle mb-4">
+                            <i class="fas fa-flask vintageblue-icon fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Laboratory Services</h4>
+                        <p class="text-muted mb-3">Advanced diagnostic testing and laboratory services.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Blood Tests</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Pathology</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Microbiology</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-vintageblue rounded-pill">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" data-aos="fade-up">Why Choose Our Services?</h2>
+                <p class="text-muted" data-aos="fade-up" data-aos-delay="100">Experience excellence in healthcare with our comprehensive medical services</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="feature-card text-center p-4">
+                        <div class="icon-circle mx-auto mb-4">
+                            <i class="fas fa-user-md vintageblue-icon fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Expert Doctors</h4>
+                        <p class="text-muted">Our team consists of highly qualified and experienced medical professionals dedicated to your care.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card text-center p-4">
+                        <div class="icon-circle mx-auto mb-4">
+                            <i class="fas fa-hospital vintageblue-icon fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Modern Facilities</h4>
+                        <p class="text-muted">State-of-the-art medical equipment and comfortable treatment environments for optimal care.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card text-center p-4">
+                        <div class="icon-circle mx-auto mb-4">
+                            <i class="fas fa-clock vintageblue-icon fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">24/7 Care</h4>
+                        <p class="text-muted">Round-the-clock medical services and emergency care available whenever you need us.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5" style="background: linear-gradient(135deg, #8dc63f 0%, #00b6e9 100%);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white fw-bold mb-4" data-aos="fade-up">Ready to Experience Our Services?</h2>
+                    <p class="text-white mb-4" data-aos="fade-up" data-aos-delay="100">Schedule an appointment with our medical professionals today.</p>
+                    <a href="appointment1.html" class="btn btn-light btn-lg rounded-pill px-4" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-calendar-check me-2"></i>Book Appointment
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/1234567890" class="floating-whatsapp btn btn-success rounded-circle shadow-lg" target="_blank">
+        <i class="fab fa-whatsapp fa-2x"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top btn btn-primary rounded-circle shadow-lg">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 position-relative" style="background: #003366 !important;">
+        <!-- Footer Wave -->
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <!-- <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path> -->
+            </svg>
+        </div>
+        <div class="container position-relative footer-content">
+            <div class="row align-items-start g-3">
+                <!-- Left: Logo & Description -->
+                <div class="col-md-4 col-12 mb-3 mb-md-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <!-- <i class="fas fa-hospital-alt text-primary fa-lg me-2"></i> -->
+                        <span class="fw-bold fs-5">Chanse Medical</span>
+                    </div>
+                    <p class="mb-2 small text-white-50">Providing quality healthcare for you and your family since 1995. Your trusted partner in health and wellness.</p>
+                </div>
+                <!-- Center: Quick Links & Working Hours -->
+                <div class="col-md-4 col-12 mb-3 mb-md-0">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-2 text-uppercase small">Quick Links</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="index.html" class="text-white-50 text-decoration-none small">Home</a></li>
+                                <li><a href="about1.html" class="text-white-50 text-decoration-none small">About</a></li>
+                                <li><a href="services1.html" class="text-white-50 text-decoration-none small">Services</a></li>
+                                <li><a href="doctors1.html" class="text-white-50 text-decoration-none small">Doctors</a></li>
+                                <li><a href="contact1.html" class="text-white-50 text-decoration-none small">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-2 text-uppercase small">Working Hours</h6>
+                            <ul class="list-unstyled mb-0 small">
+                                <li>Mon-Fri: 8am-8pm</li>
+                                <li>Sat: 9am-5pm</li>
+                                <li>Sun: Emergency Only</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Contact & Social -->
+                <div class="col-md-4 col-12">
+                    <h6 class="fw-bold mb-2 text-uppercase small">Contact</h6>
+                    <ul class="list-unstyled mb-2 small">
+                        <li class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>123 Medical Center Drive, Healthcare City</li>
+                        <li class="mb-1"><i class="fas fa-phone me-2"></i><a href="tel:+1234567890" class="text-white-50 text-decoration-none">+1 (234) 567-890</a></li>
+                        <li><i class="fas fa-envelope me-2"></i><a href="mailto:info@chansemedical.com" class="text-white-50 text-decoration-none">info@chansemedical.com</a></li>
+                    </ul>
+                    <div class="d-flex gap-2 mt-2">
+                        <a href="#" class="text-white-50"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-white-50 small">&copy; 2025 Chanse Medical. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <ul class="list-inline mb-0 small">
+                        <li class="list-inline-item"><a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                        <li class="list-inline-item"><span class="text-white-50">|</span></li>
+                        <li class="list-inline-item"><a href="#" class="text-white-50 text-decoration-none">Terms of Service</a></li>
+                        <li class="list-inline-item"><span class="text-white-50">|</span></li>
+                        <li class="list-inline-item"><a href="#" class="text-white-50 text-decoration-none">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize Swiper
+        const servicesSwiper = new Swiper('.services-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        // Back to top button visibility
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll to top
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.info-card, .testimonial-card, .service-card, .news-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Animate statistics numbers
+        function animateNumbers() {
+            const stats = document.querySelectorAll('.stat-item h2');
+            stats.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        stat.textContent = target + '+';
+                    } else {
+                        stat.textContent = Math.floor(current) + '+';
+                    }
+                }, 40);
+            });
+        }
+
+        // Trigger number animation when statistics section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.statistics'));
+
+        // Form submission handling
+        document.querySelector('.appointment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for booking an appointment. We will contact you shortly.');
+            bootstrap.Modal.getInstance(document.getElementById('appointmentModal')).hide();
+        });
+
+        // Newsletter form submission with validation
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            // Add your newsletter subscription logic here
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+
+        // Add animation to feature items
+        document.querySelectorAll('.feature-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+
+</html>

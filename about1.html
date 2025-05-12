@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Chanse Medical</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .navbar-gradient {
+            background: linear-gradient(135deg, #8dc63f 0%, #00b6e9 100%) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+            transition: none !important;
+            opacity: 1 !important;
+        }
+        
+        .navbar-gradient .navbar-brand,
+        .navbar-gradient .nav-link,
+        .navbar-gradient .navbar-toggler {
+            color: #fff !important;
+        }
+        
+        .navbar-gradient .nav-link.active,
+        .navbar-gradient .nav-link:focus,
+        .navbar-gradient .nav-link:hover {
+            color: #fff !important;
+            background: #003366 !important;
+            border-radius: 0.5rem;
+        }
+        
+        .navbar-gradient .btn-primary {
+            background: #fff !important;
+            color: #00b6e9 !important;
+            border: none;
+        }
+        
+        .navbar-gradient .btn-primary:hover {
+            background: #8dc63f !important;
+            color: #fff !important;
+        }
+        
+        .card,
+        .feature-card,
+        .info-card {
+            background: #8dc63f !important;
+            color: #fff !important;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover,
+        .feature-card:hover,
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 32px rgba(141, 198, 63, 0.15), 0 1.5px 6px rgba(0, 0, 0, 0.07);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            z-index: 999;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #49759c !important;
+            color: #fff;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #35516a !important;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-poppins">
+    <!-- Emergency Contact Banner -->
+    <div class="emergency-banner bg-danger text-white py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <i class="fas fa-phone-alt me-2"></i>
+                    <span>Emergency Hotline: <a href="tel:+1234567890" class="text-white text-decoration-none fw-bold">+1 (234) 567-890</a></span>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <i class="fas fa-clock me-2"></i>
+                    <span>24/7 Emergency Services Available</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-gradient fixed-top shadow-sm">
+        <div class="container">
+            <a href="index.html" class="p-0 navbar-brand"> <img src="CHANSE MEDICAL/Img/QF1-logo.png" width="100" height="100" /> </a>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="fw-bold">Chanse</span> Medical
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-semibold" href="about1.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="services1.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="doctors1.html">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="contact1.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link btn btn-primary px-4 py-2 rounded-pill" href="appointment1.html" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+                            <i class="fas fa-calendar-check me-2"></i>Book Appointment
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero position-relative py-5" style="background: linear-gradient(135deg, #8dc63f 0%, #00b6e9 100%);">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold text-white mb-4">About Chanse Medical</h1>
+                    <p class="lead text-white mb-4">Delivering Excellence in Healthcare Since 1995</p>
+                    <p class="text-white mb-4">At Chanse Medical, we combine cutting-edge technology with compassionate care to provide comprehensive healthcare solutions for you and your family. Our commitment to excellence and patient-centered approach has made us a trusted name
+                        in healthcare.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#our-story" class="btn btn-light btn-lg rounded-pill px-4">
+                            <i class="fas fa-book-open me-2"></i>Our Story
+                        </a>
+                        <a href="#leadership" class="btn btn-outline-light btn-lg rounded-pill px-4">
+                            <i class="fas fa-users me-2"></i>Our Team
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="our-story" class="our-story py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h2 class="fw-bold mb-4">Our Journey of Excellence</h2>
+                    <p class="lead mb-4">A Legacy of Healthcare Innovation</p>
+                    <p>Founded in 1995, Chanse Medical began as a small clinic with a big vision: to transform healthcare delivery through innovation and compassion. Over the years, we have grown into a comprehensive medical facility, serving thousands of
+                        patients with state-of-the-art technology and personalized care.</p>
+                    <p>Our journey has been marked by several milestones:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i>1995: Establishment of our first clinic</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i>2005: Expansion to a full-service medical center</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i>2015: Implementation of advanced medical technologies</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i>2020: Recognition as a leading healthcare provider</li>
+                    </ul>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="position-relative">
+                        <img src="CHANSE MEDICAL/Img/s2.jpg" alt="Medical Facility" class="img-fluid rounded shadow-lg">
+                        <div class="position-absolute bottom-0 start-0 bg-primary text-white p-3 rounded-top-right">
+                            <h4 class="mb-0">25+ Years of Excellence</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <i class="fas fa-bullseye fa-3x mb-3"></i>
+                            <h3 class="card-title">Our Mission</h3>
+                            <p class="card-text">To provide exceptional healthcare services that improve the quality of life for our patients and their families, while maintaining the highest standards of medical practice and patient care. We are committed to:</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-white me-2"></i>Delivering personalized patient care</li>
+                                <li class="mb-2"><i class="fas fa-check text-white me-2"></i>Advancing medical innovation</li>
+                                <li class="mb-2"><i class="fas fa-check text-white me-2"></i>Promoting community health</li>
+                                <li><i class="fas fa-check text-white me-2"></i>Ensuring accessibility to quality healthcare</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <i class="fas fa-eye fa-3x mb-3"></i>
+                            <h3 class="card-title">Our Vision</h3>
+                            <p class="card-text">To be the leading healthcare provider in our community, known for excellence in patient care, innovative medical practices, and compassionate service. We envision:</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-white me-2"></i>Setting new standards in healthcare delivery</li>
+                                <li class="mb-2"><i class="fas fa-check text-white me-2"></i>Creating a healthier community</li>
+                                <li class="mb-2"><i class="fas fa-check text-white me-2"></i>Leading in medical research and innovation</li>
+                                <li><i class="fas fa-check text-white me-2"></i>Building lasting patient relationships</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="core-values py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Our Core Values</h2>
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="fade-up">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-heart fa-3x mb-3"></i>
+                        <h4>Compassion</h4>
+                        <p>Treating every patient with empathy, understanding, and respect. We believe in the power of compassionate care to heal and comfort.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-star fa-3x mb-3"></i>
+                        <h4>Excellence</h4>
+                        <p>Maintaining the highest standards in medical care and service. We strive for excellence in everything we do.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-handshake fa-3x mb-3"></i>
+                        <h4>Integrity</h4>
+                        <p>Upholding ethical standards and professional conduct. We believe in transparency and honesty in all our interactions.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-lightbulb fa-3x mb-3"></i>
+                        <h4>Innovation</h4>
+                        <p>Embracing new technologies and methods to improve patient care. We continuously seek better ways to serve our patients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="statistics py-5" style="background: linear-gradient(135deg, #8dc63f 0%, #00b6e9 100%);">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3" data-aos="fade-up">
+                    <h2 class="display-4 fw-bold text-white">25+</h2>
+                    <p class="text-white">Years of Experience</p>
+                    <p class="text-white-50 small">Serving our community since 1995</p>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="display-4 fw-bold text-white">50+</h2>
+                    <p class="text-white">Expert Doctors</p>
+                    <p class="text-white-50 small">Specialized in various fields</p>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="display-4 fw-bold text-white">10k+</h2>
+                    <p class="text-white">Happy Patients</p>
+                    <p class="text-white-50 small">Trusting us with their health</p>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="display-4 fw-bold text-white">24/7</h2>
+                    <p class="text-white">Emergency Care</p>
+                    <p class="text-white-50 small">Always here when you need us</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section id="leadership" class="leadership py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Our Leadership Team</h2>
+            <p class="text-center text-muted mb-5" data-aos="fade-up">Meet the experienced professionals leading our healthcare institution</p>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card text-center">
+                        <div class="card-body p-4">
+                            <img src="CHANSE MEDICAL/Img/d1.jpg" alt="CEO" class="rounded-circle mb-3" width="150">
+                            <h4>Dr. John Smith</h4>
+                            <p class="text-muted">Chief Executive Officer</p>
+                            <p>With over 20 years of experience in healthcare management, Dr. Smith leads our institution with vision and expertise.</p>
+                            <div class="d-flex justify-content-center gap-2 mt-3">
+                                <a href="#" class="text-muted"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-muted"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card text-center">
+                        <div class="card-body p-4">
+                            <img src="CHANSE MEDICAL/Img/d5.jpg" alt="CMO" class="rounded-circle mb-3" width="150">
+                            <h4>Dr. Sarah Johnson</h4>
+                            <p class="text-muted">Chief Medical Officer</p>
+                            <p>Leading our medical team with expertise and vision, Dr. Johnson ensures the highest standards of patient care.</p>
+                            <div class="d-flex justify-content-center gap-2 mt-3">
+                                <a href="#" class="text-muted"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-muted"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card text-center">
+                        <div class="card-body p-4">
+                            <img src="CHANSE MEDICAL/Img/d3.jpg" alt="COO" class="rounded-circle mb-3" width="150">
+                            <h4>Michael Williams</h4>
+                            <p class="text-muted">Chief Operations Officer</p>
+                            <p>Ensuring smooth operations and quality service delivery, Michael brings operational excellence to our institution.</p>
+                            <div class="d-flex justify-content-center gap-2 mt-3">
+                                <a href="#" class="text-muted"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-muted"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5" style="background: linear-gradient(135deg, #8dc63f 0%, #00b6e9 100%);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white fw-bold mb-4" data-aos="fade-up">Experience Excellence in Healthcare</h2>
+                    <p class="text-white mb-4" data-aos="fade-up" data-aos-delay="100">Join thousands of satisfied patients who trust Chanse Medical for their healthcare needs. Schedule your appointment today and experience the difference of compassionate, quality healthcare.</p>
+                    <div class="d-flex gap-3 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <a href="appointment1.html" class="btn btn-light btn-lg rounded-pill px-4">
+                            <i class="fas fa-calendar-check me-2"></i>Book Appointment
+                        </a>
+                        <a href="contact1.html" class="btn btn-outline-light btn-lg rounded-pill px-4">
+                            <i class="fas fa-phone-alt me-2"></i>Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/1234567890" class="floating-whatsapp btn btn-success rounded-circle shadow-lg" target="_blank">
+        <i class="fab fa-whatsapp fa-2x"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 position-relative" style="background: #003366 !important;">
+        <div class="container position-relative footer-content">
+            <div class="row align-items-start g-3">
+                <!-- Left: Logo & Description -->
+                <div class="col-md-4 col-12 mb-3 mb-md-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <!-- <i class="fas fa-hospital-alt text-primary fa-lg me-2"></i> -->
+                        <span class="fw-bold fs-5">Chanse Medical</span>
+                    </div>
+                    <p class="mb-2 small text-white-50">Providing quality healthcare for you and your family since 1995. Your trusted partner in health and wellness.</p>
+                </div>
+                <!-- Center: Quick Links & Working Hours -->
+                <div class="col-md-4 col-12 mb-3 mb-md-0">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-2 text-uppercase small">Quick Links</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="index.html" class="text-white-50 text-decoration-none small">Home</a></li>
+                                <li><a href="about1.html" class="text-white-50 text-decoration-none small">About</a></li>
+                                <li><a href="services1.html" class="text-white-50 text-decoration-none small">Services</a></li>
+                                <li><a href="doctors1.html" class="text-white-50 text-decoration-none small">Doctors</a></li>
+                                <li><a href="contact1.html" class="text-white-50 text-decoration-none small">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="fw-bold mb-2 text-uppercase small">Working Hours</h6>
+                            <ul class="list-unstyled mb-0 small">
+                                <li>Mon-Fri: 8am-8pm</li>
+                                <li>Sat: 9am-5pm</li>
+                                <li>Sun: Emergency Only</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Contact & Social -->
+                <div class="col-md-4 col-12">
+                    <h6 class="fw-bold mb-2 text-uppercase small">Contact</h6>
+                    <ul class="list-unstyled mb-2 small">
+                        <li class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>123 Medical Center Drive, Healthcare City</li>
+                        <li class="mb-1"><i class="fas fa-phone me-2"></i><a href="tel:+1234567890" class="text-white-50 text-decoration-none">+1 (234) 567-890</a></li>
+                        <li><i class="fas fa-envelope me-2"></i><a href="mailto:info@chansemedical.com" class="text-white-50 text-decoration-none">info@chansemedical.com</a></li>
+                    </ul>
+                    <div class="d-flex gap-2 mt-2">
+                        <a href="#" class="text-white-50"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-white-50 small">&copy; 2025 Chanse Medical. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <ul class="list-inline mb-0 small">
+                        <li class="list-inline-item"><a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                        <li class="list-inline-item"><span class="text-white-50">|</span></li>
+                        <li class="list-inline-item"><a href="#" class="text-white-50 text-decoration-none">Terms of Service</a></li>
+                        <li class="list-inline-item"><span class="text-white-50">|</span></li>
+                        <li class="list-inline-item"><a href="#" class="text-white-50 text-decoration-none">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top btn btn-primary rounded-circle shadow">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Back to top button visibility
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll to top
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
